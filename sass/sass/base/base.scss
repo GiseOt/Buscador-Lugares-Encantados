@@ -1,0 +1,16 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Vollkorn SC", sans-serif;
+}
+
+html {
+	scrollbar-color: rgb(205, 92, 8) black;
+	scrollbar-width: auto;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+}

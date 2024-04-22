@@ -1,0 +1,239 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Vollkorn+SC:wght@400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Vollkorn SC", sans-serif;
+}
+
+html {
+  scrollbar-color: rgb(205, 92, 8) black;
+  scrollbar-width: auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+form input[type=submit] {
+  padding: 8px 15px;
+  background-color: rgb(205, 92, 8);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition-property: background-color;
+  transition-duration: 2s;
+  margin-top: 10px;
+}
+form input[type=submit]:hover {
+  background-color: rgb(106, 156, 137);
+}
+
+header button {
+  padding: 10px;
+  height: 50px;
+  background-color: rgb(106, 156, 137);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition-property: background-color;
+  transition-duration: 2s;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+header button:hover {
+  background-color: rgb(193, 216, 195);
+}
+
+.card_detalle button {
+  background-color: rgb(193, 216, 195);
+  width: 75px;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.card_detalle .volver__btn {
+  border: none;
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: rgb(205, 92, 8);
+  margin-block: 5px;
+  margin-left: -5px;
+  width: auto;
+}
+.card_detalle .volver__btn:hover {
+  text-decoration: underline;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgb(193, 216, 195);
+  margin-bottom: 20px;
+  overflow: hidden;
+  width: 300px;
+}
+.card .img__card {
+  overflow: hidden;
+  height: 200px;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card div {
+  padding: 20px;
+}
+.card h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.card button {
+  background-color: rgb(106, 156, 137);
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.card button:hover {
+  background-color: rgb(91, 143, 185);
+}
+
+.card_detalle {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  min-height: 600px;
+  min-width: 300px;
+  max-width: 600px;
+  margin: auto;
+}
+.card_detalle img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+  margin-bottom: 20px;
+}
+.card_detalle h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.card_detalle h3,
+.card_detalle p,
+.card_detalle span {
+  margin-bottom: 10px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-block: 20px;
+  gap: 20px;
+}
+
+.seccion__formulario {
+  display: none;
+}
+.seccion__formulario form {
+  width: 100%;
+  background-color: rgb(223, 230, 230);
+  padding: 20px;
+  border-radius: 10px;
+}
+.seccion__formulario .formulario_diseño {
+  display: flex;
+  flex-direction: column;
+}
+.seccion__formulario .formulario_diseño label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.seccion__formulario .formulario_diseño input[type=text],
+.seccion__formulario .formulario_diseño textarea,
+.seccion__formulario .formulario_diseño select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+select {
+  text-align: center;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  width: 300px;
+  padding: 15px;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.formulario_agregar select {
+  width: 300px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+h1 {
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+  font-size: 50px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  background-color: black;
+  /* background-image: url(/assets/Asylum-1024x683.jpg);
+  background-size:cover;
+  background-position: center;  */
+  box-shadow: 0 3px 60px -10px rgba(0, 0, 0, 0.3);
+  /*ver colores */
+}
+header h1 {
+  padding-block: 20px;
+  padding-inline: 10px;
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  flex-grow: 1;
+  text-align: justify;
+  font-family: "Vollkorn SC", sans-serif;
+}
+
+main {
+  padding-inline: 30px;
+}
+main h3 {
+  text-align: center;
+}
+
+.footer {
+  background: rgb(0, 0, 0);
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+/*# sourceMappingURL=styles.css.map */
