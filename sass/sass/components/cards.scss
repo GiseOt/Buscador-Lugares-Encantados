@@ -1,3 +1,13 @@
+//Section Cards
+.contenedor-cards{
+    display: flex;
+   flex-direction: column ;
+   //justify-content: center;
+   align-items: center;
+   gap: 25px;
+}
+//en destop cambio colum por flex ,
+
 // Estilos cards
 
 .card {
@@ -5,7 +15,7 @@
 	border: 1px solid #eaeaea;
 	border-radius: 5px;
 	box-shadow: 0 0 5px rgb(193, 216, 195);
-	margin-bottom: 20px;
+	//margin-bottom: 20px;
 	overflow: hidden;
 	width: 300px;
 
@@ -28,6 +38,7 @@
 		font-size: 18px;
 		margin-bottom: 10px;
 	}
+    
 
 	button {
 		background-color: rgb(106, 156, 137);
@@ -74,8 +85,9 @@
 	span {
 		margin-bottom: 10px;
 	}
-
+.nivel_span{
+    font-weight: bolder;
+}
 	
 }
 
-//en destop saco margin auto y pongo display (cambiar tamaño)

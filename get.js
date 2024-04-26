@@ -82,7 +82,7 @@ const renderizarDetalleLugar = (lugar) => {
 		document.getElementById("contenedor-detalle").style.display = "none";
 		getLugares(urlApi);
 		// cancelEdicionbtn();
-		//hacer funcion del btn cancelar o cambiarlo por X
+		
 	});
 
 	document
