@@ -14,7 +14,7 @@
 			</button>
 		</header>
 
-		<main>
+		<main class="main">
 			<!-- <div class="spinner_container hidden">
       <img src="" alt="Loading" />
     </div> -->
@@ -25,7 +25,7 @@
 				<!--**-- FORMULARIO BUSQUEDA --*****-->
 				<form id="formulario__busqueda" class="formulario__busqueda">
 					<div id="buscar_comunidad" class="comunidades__select">
-						<select id="Comunidad" class="select_comunidad">
+						<select id="comunidad" class="select_comunidad">
 							<option value="">Seleccione una Comunidad</option>
 							<option value="Andalucía">Andalucía</option>
 							<option value="Aragón">Aragón</option>
@@ -38,7 +38,8 @@
 							<option value="Catalunya">Catalunya</option>
 							<option value="Extremadura">Extremadura</option>
 							<option value="Galicia">Galicia</option>
-							<option value="Madrid">Madrid</option>
+							<option value="Madrid">
+                                Madrid</option>
 							<option value="Región de Murcia">Región de Murcia</option>
 							<option value="Comunidad Foral de Navarra">
 								Comunidad Foral de Navarra
@@ -61,9 +62,9 @@
 						<select id="nivel_encantamiento">
 							<!--  ver si es por numero o letra -->
 							<option value="">Nivel de encantamiento</option>
-							<option value="1">Bajo</option>
-							<option value="2">Medio</option>
-							<option value="3">Alto</option>
+							<option value="Bajo">Bajo</option>
+							<option value="Medio">Medio</option>
+							<option value="Alto">Alto</option>
 						</select>
 					</div>
 					<div>
@@ -98,15 +99,15 @@
 			<!--**-- FORMULARIO AGREGAR --*****-->
 			<section id="seccion__formulario__agregar" class="seccion__formulario">
 				<form class="formulario_diseño" id="formulario_agregar">
-					<label>Nombre: </label>
-					<input type="text" id="" />
-					<label> Imagen (Url): </label>
-					<input type="text" id="" />
+					<label for="agregar__lugar">Nombre: </label>
+					<input type="text" id="agregar__lugar" />
+					<label for="agregar__imagen"> Imagen (Url): </label>
+					<input type="text" id="agregar__imagen" />
 
-					<label>Description: </label>
-					<textarea id=""></textarea>
+					<label for="agregar__descripcion">Description: </label>
+					<textarea id="agregar__descripcion"></textarea>
 
-					<label>Categoria</label>
+					<label for="agregar__categoria">Categoria</label>
 					<select name="categoria" id="agregar__categoria">
 						<option value="Pueblo">Pueblo</option>
 						<option value="Iglesia">Iglesia</option>
@@ -114,7 +115,7 @@
 						<option value="Hospital">Hospital</option>
 					</select>
 
-					<label>Comunidad</label>
+					<label for="agregar__comunidad">Comunidad</label>
 					<select id="agregar__comunidad">
 						<option value="">Seleccione una Comunidad</option>
 						<option value="Andalucía">Andalucía</option>
@@ -138,7 +139,7 @@
 						<option value="Comunidad Valenciana">Comunidad Valenciana</option>
 					</select>
 
-					<label>Nivel:</label>
+					<label for="agregar__nivel">Nivel:</label>
 					<select id="agregar__nivel">
 						<option value="">Nivel de encantamiento</option>
 						<option value="bajo">Bajo</option>
@@ -146,7 +147,12 @@
 						<option value="alto">Alto</option>
 					</select>
 					<div>
-						<input type="submit" class="btn-cancelar" value="Cancelar" />
+						<input
+							type="submit"
+							class="btn__cancelar"
+							id="btn__cancelar"
+							value="Cancelar"
+						/>
 						<input
 							type="submit"
 							class="btn-crear"
@@ -159,16 +165,19 @@
 			<!--**-- FORMULARIO EDITAR --*****-->
 			<section id="seccion__formulario__editar" class="seccion__formulario">
 				<form class="formulario_diseño" id="formulario_editar">
+					<button class="cerrar_editar" type="button" id="cerrar_editar">
+						x
+					</button>
 					<label>Nombre: </label>
-					<input type="text" id="" />
+					<input type="text" id="editar__nombre" />
 					<label> Imagen (Url): </label>
-					<input type="text" id="" />
+					<input type="text" id="editar__imagen" />
 
 					<label>Description: </label>
-					<textarea id=""></textarea>
+					<textarea id="editar__descripcion"></textarea>
 
 					<label>Categoria</label>
-					<select name="categoria" id="agregar__categoria">
+					<select name="categoria" id="editar__categoria">
 						<option value="Pueblo">Pueblo</option>
 						<option value="Iglesia">Iglesia</option>
 						<option value="Casa">Casa</option>
@@ -176,7 +185,7 @@
 					</select>
 
 					<label>Comunidad</label>
-					<select id="agregar__comunidad">
+					<select id="editar__comunidad">
 						<option value="">Seleccione una Comunidad</option>
 						<option value="Andalucía">Andalucía</option>
 						<option value="Aragón">Aragón</option>
@@ -200,14 +209,13 @@
 					</select>
 
 					<label>Nivel:</label>
-					<select id="agregar__nivel">
+					<select id="editar__nivel">
 						<option value="">Nivel de encantamiento</option>
 						<option value="bajo">Bajo</option>
 						<option value="medio">Medio</option>
 						<option value="alto">Alto</option>
 					</select>
 					<div>
-						<input type="submit" class="btn-cancelar" value="Cancelar" />
 						<input
 							type="submit"
 							class="btn-editar"
@@ -217,6 +225,19 @@
 					</div>
 				</form>
 			</section>
+			<div class="modal" id ="modal">
+				<div class="modal__card">
+					<p>¿Estás seguro de que quieres borrar?</p>
+					<p class="alerta">
+						<i class="fa-solid fa-circle-exclamation"></i>Esto no se puede
+						deshacer.
+					</p>
+					<div class="modal__btn">
+						<button class="cancel" id="cancelar__borrar">Cancelar</button>
+						<button class="delete" id="confrimar__borrar">Borrar</button>
+					</div>
+				</div>
+			</div>
 		</main>
 		<footer id="footer" class="footer">
 			<p>© Gisella Ortiz de la Tabla 2024</p>
@@ -227,5 +248,6 @@
 			crossorigin="anonymous"
 		></script>
 		<script src="get.js"></script>
+		<script src="put.js"></script>
 	</body>
 </html>
