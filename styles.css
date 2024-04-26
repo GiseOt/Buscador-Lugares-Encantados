@@ -16,6 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 50px;
+  min-height: 100vh;
 }
 
 form input[type=submit] {
@@ -72,12 +73,18 @@ header button:hover {
   text-decoration: underline;
 }
 
+.contenedor-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
 .card {
   background-color: #ffffff;
   border: 1px solid #eaeaea;
   border-radius: 5px;
   box-shadow: 0 0 5px rgb(193, 216, 195);
-  margin-bottom: 20px;
   overflow: hidden;
   width: 300px;
 }
@@ -136,6 +143,9 @@ header button:hover {
 .card_detalle p,
 .card_detalle span {
   margin-bottom: 10px;
+}
+.card_detalle .nivel_span {
+  font-weight: bolder;
 }
 
 form {
@@ -200,6 +210,57 @@ h1 {
   font-size: 50px;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(205, 92, 8, 0.8);
+}
+.modal .modal__card {
+  background-color: white;
+  margin: 50% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+}
+.modal .modal__card .alerta {
+  color: red;
+}
+.modal .modal__card .modal__btn {
+  margin-top: 20px;
+}
+.modal .modal__card .modal__btn button {
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete {
+  background-color: rgb(205, 92, 8);
+  color: white;
+}
+.delete:hover {
+  background-color: darkred;
+}
+
+.cancel {
+  border: none;
+  text-decoration: none;
+  background-color: rgb(193, 216, 195);
+  margin-right: 10px;
+}
+.cancel:hover {
+  text-decoration: underline;
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -224,6 +285,7 @@ header h1 {
 
 main {
   padding-inline: 30px;
+  flex-grow: 1;
 }
 main h3 {
   text-align: center;
