@@ -4,15 +4,32 @@ const contenedorCards = document.getElementById("contenedor-cards");
 const sectionBuscar = document.getElementById("section_buscar");
 const spinner = document.getElementById("spinner");
 
+// Mi spinner
+const renderSpinner = () => {
+	spinner.style.display = "block";
+	sectionBuscar.style.display = "none";
+	contenedorCards.style.display = "none";
+};
+
+const ocultarSpinner = () => {
+	spinner.style.removeProperty("display");
+	sectionBuscar.style.removeProperty("display");
+	contenedorCards.style.removeProperty("display");
+};
 
 
 // Traer Lugares
 const getLugares = (urlApi) => {
+	// Mostrar el spinner
+	renderSpinner();
+	setTimeout(() => {
+		ocultarSpinner();
+	}, 2000);
+
 	fetch(urlApi)
 		.then((res) => res.json())
 		.then((data) => {
 			renderCardLugar(data);
-			
 		})
 		.catch((err) => {
 			contenedorCards.innerHTML = `<div class="card-alert">
