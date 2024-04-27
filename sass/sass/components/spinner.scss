@@ -1,0 +1,16 @@
+.spinner {
+    display: none;
+  position: absolute;
+  top: 50%;
+  left:35%; //50% en escritorio
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  max-width: 100%;
+  overflow-x: hidden;
+
+   img {
+  display: block;
+ 
+}
+} 
+
