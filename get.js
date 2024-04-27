@@ -2,13 +2,23 @@
 const urlApi = "https://6617d152ed6b8fa43483db5a.mockapi.io/api/places";
 const contenedorCards = document.getElementById("contenedor-cards");
 const sectionBuscar = document.getElementById("section_buscar");
+const spinner = document.getElementById("spinner");
+
+
 
 // Traer Lugares
 const getLugares = (urlApi) => {
 	fetch(urlApi)
 		.then((res) => res.json())
-		.then((data) => renderCardLugar(data))
-		.catch((err) => console.log(err));
+		.then((data) => {
+			renderCardLugar(data);
+			
+		})
+		.catch((err) => {
+			contenedorCards.innerHTML = `<div class="card-alert">
+                <h2> No se encontraron Lugares </h2>
+                </div>`;
+		});
 };
 
 getLugares(urlApi);
@@ -43,7 +53,6 @@ const btnsDetalles = (btns) => {
 		})
 	);
 };
-
 // Get detalle
 const getLugarEncantado = (idLugar) => {
 	fetch(`${urlApi}/${idLugar}`)
@@ -52,40 +61,42 @@ const getLugarEncantado = (idLugar) => {
 		.catch((err) => console.log(err));
 };
 
-// Función para renderizar el detalle del lugar
+// Renderizar el detalle del lugar
+
 const renderizarDetalleLugar = (lugar) => {
 	const { name, urlImagen, id, description, location, enchantmentLevel } =
 		lugar;
 
 	contenedorCards.innerHTML = `
-        <div id="contenedor-detalle">
-            <div class="card_detalle">
-                <button class="volver__btn" id="volver__btn" type="submit"><< Volver </button>
-                <h2 class="card_name">${name}</h2>
-                <img src="${urlImagen}" class="card_img" />
-                <h3 class="card_location">${location}</h3>
-                <p>${description}</p>
-                <span>Nvl: ${enchantmentLevel}</span>
-                <button class="card_button_editar" data-cardId="${id}">
-                    Editar
-                </button>
-                <button class="card_button_eliminar" data-cardId="${id}">
-                    Eliminar
-                </button>
-            </div>
-        </div>`;
+            <div id="contenedor-detalle">
+                <div class="card_detalle">
+                    <button class="volver__btn" id="volver__btn" type="submit"><< Volver </button>
+                    <h2 class="card_name">${name}</h2>
+                    <img src="${urlImagen}" class="card_img" />
+                    <h3 class="card_location">${location}</h3>
+                    <p>${description}</p>
+                    <span class="nivel_span">👻${enchantmentLevel}</span>
+                    <button class="card_button_editar" data-cardId="${id}">
+                        Editar
+                    </button>
+                    <button class="card_button_eliminar" data-cardId="${id}">
+                        Eliminar
+                    </button>
+                </div>
+            </div>`;
 
-	// Volver a la pagina de inicio
 	const btnVolver = document.getElementById("volver__btn");
 	btnVolver.addEventListener("click", () => {
 		sectionBuscar.style.display = "block";
 		document.getElementById("contenedor-detalle").style.display = "none";
 		getLugares(urlApi);
-		// cancelEdicionbtn();
-		
 	});
 
-	document
-		.querySelector(".card_button_editar")
-		.addEventListener("click", () => mostrarFormularioEdicion(lugar));
+	document.querySelectorAll(".card_button_editar").forEach((btn) => {
+		btn.addEventListener("click", () => mostrarFormularioEdicion(lugar));
+	});
+
+	document.querySelectorAll(".card_button_eliminar").forEach((btn) => {
+		btn.addEventListener("click", () => mostrarlModalBorrar(id));
+	});
 };
