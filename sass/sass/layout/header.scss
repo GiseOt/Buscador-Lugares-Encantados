@@ -2,30 +2,12 @@ header{
     display: flex;
     justify-content: center;
     align-items: baseline;
-     background-color: black;
-    /* background-image: url(/assets/Asylum-1024x683.jpg);
+    // background-color: black;
+    background-image: url(/assets/pexels-gabby-k-5635103.jpg);
     background-size:cover;
-    background-position: center;  */
-    //padding: 20px; //en escritorio
-    //box-shadow: 0 8px 10px rgba(205, 92, 8 , 0.5);
-   //border: solid 2px #b95151;
-   box-shadow: 0 3px 60px -10px rgba(0, 0, 0, 0.3);
- 
-   
+    background-position: center; 
+    padding-block: 10px; //en escritorio 20
+    //box-shadow: 2px 3px 60px -10px rgb(205, 92, 8);
 
- /*ver colores */
-    h1{
-        padding-block: 20px;
-        padding-inline: 10px ;
-        color: white;
-        font-size: 25px;
-        text-align: center; //en destokp
-        flex-grow: 1;
-        //text-shadow: 3px 3px 2px rgb(3, 3, 3);
-        text-align: justify;
-        font-family: "Vollkorn SC", sans-serif;
-     
-  
-    }
 }
  
