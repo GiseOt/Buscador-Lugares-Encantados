@@ -1,19 +1,5 @@
-@mixin breakpoint ($point) {
-    @media (min-width : 970px ){
-        @content;
-    }
-  
+@mixin responsive() {
+	@media (min-width: 970px) {
+		@content;
+	}
 }
-
-/* @mixin breakpoint ($point) {
-    @if $point == md {
-        @media (min-width : 970px){ @content;
-        }
-    }
-    @else if $point == desktop {
-        @media (min-width : 1340px){
-            @content;
-        }
-    }
-  
-} */

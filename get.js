@@ -5,7 +5,7 @@ const sectionBuscar = document.getElementById("section_buscar");
 const spinner = document.getElementById("spinner");
 
 // Mi spinner
-const renderSpinner = () => {
+const mostrarSpinner = () => {
 	spinner.style.display = "block";
 	sectionBuscar.style.display = "none";
 	contenedorCards.style.display = "none";
@@ -17,11 +17,10 @@ const ocultarSpinner = () => {
 	contenedorCards.style.removeProperty("display");
 };
 
-
 // Traer Lugares
 const getLugares = (urlApi) => {
 	// Mostrar el spinner
-	renderSpinner();
+	mostrarSpinner();
 	setTimeout(() => {
 		ocultarSpinner();
 	}, 2000);
@@ -29,7 +28,7 @@ const getLugares = (urlApi) => {
 	fetch(urlApi)
 		.then((res) => res.json())
 		.then((data) => {
-			renderCardLugar(data);
+			renderizarCardLugar(data);
 		})
 		.catch((err) => {
 			contenedorCards.innerHTML = `<div class="card-alert">
@@ -41,11 +40,10 @@ const getLugares = (urlApi) => {
 getLugares(urlApi);
 
 // Renderizar
-const renderCardLugar = (places) => {
+const renderizarCardLugar = (lugares) => {
 	contenedorCards.innerHTML = "";
-
-	places.forEach((place) => {
-		const { name, urlImagen, id } = place;
+	lugares.forEach((lugar) => {
+		const { name, urlImagen, id } = lugar;
 		contenedorCards.innerHTML += `
             <div class="card">
                 <div class="img__card">
@@ -88,10 +86,11 @@ const renderizarDetalleLugar = (lugar) => {
             <div id="contenedor-detalle">
                 <div class="card_detalle">
                     <button class="volver__btn" id="volver__btn" type="submit"><< Volver </button>
-                    <h2 class="card_name">${name}</h2>
+                    <h2 class="card_nombre">${name}</h2>
                     <img src="${urlImagen}" class="card_img" />
-                    <h3 class="card_location">${location}</h3>
+                    <h3 class="card_lugar">${location}</h3>
                     <p>${description}</p>
+                    <div class ="botones_div">
                     <span class="nivel_span">👻${enchantmentLevel}</span>
                     <button class="card_button_editar" data-cardId="${id}">
                         Editar
@@ -99,11 +98,13 @@ const renderizarDetalleLugar = (lugar) => {
                     <button class="card_button_eliminar" data-cardId="${id}">
                         Eliminar
                     </button>
+                    </div>
                 </div>
             </div>`;
 
 	const btnVolver = document.getElementById("volver__btn");
 	btnVolver.addEventListener("click", () => {
+        editarLugarForm.style.display = "none";
 		sectionBuscar.style.display = "block";
 		document.getElementById("contenedor-detalle").style.display = "none";
 		getLugares(urlApi);

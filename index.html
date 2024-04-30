@@ -83,30 +83,21 @@
 			</section>
 			<!--**-- DIV-CONETENEDOR CARDS --*****-->
 			<section id="contenedor-cards" class="contenedor-cards">
-				<!-- mis cards solo un div-->
-				<!-- <div class="card">
-					<img id="img" src="" alt="imagen_card" />
-
-					<h2 id="descripcion">Aca el titulo</h2>
-					<div></div>
-
-					<button id="btn" class="btn">Ver detalle</button>
-				</div> -->
-				<!--   DIV DETALLE -->
+				
 			</section>
 			<!--FORMULARIO AGREGAR-->
 			<section id="seccion__formulario__agregar" class="seccion__formulario">
 				<form class="formulario_diseño" id="formulario_agregar">
 					<label for="agregar__lugar">Nombre: </label>
-					<input type="text" id="agregar__lugar" />
+					<input type="text" id="agregar__lugar" required />
 					<label for="agregar__imagen"> Imagen (Url): </label>
-					<input type="text" id="agregar__imagen" />
+					<input type="text" id="agregar__imagen" required/>
 
 					<label for="agregar__descripcion">Description: </label>
-					<textarea id="agregar__descripcion"></textarea>
+					<textarea id="agregar__descripcion" required></textarea>
 
 					<label for="agregar__categoria">Categoria</label>
-					<select name="categoria" id="agregar__categoria">
+					<select name="categoria" id="agregar__categoria" required>
 						<option value="Pueblo">Pueblo</option>
 						<option value="Iglesia">Iglesia</option>
 						<option value="Casa">Casa</option>
@@ -114,7 +105,7 @@
 					</select>
 
 					<label for="agregar__comunidad">Comunidad</label>
-					<select id="agregar__comunidad">
+					<select id="agregar__comunidad" required>
 						<option value="">Seleccione una Comunidad</option>
 						<option value="Andalucía">Andalucía</option>
 						<option value="Aragón">Aragón</option>
@@ -138,7 +129,7 @@
 					</select>
 
 					<label for="agregar__nivel">Nivel:</label>
-					<select id="agregar__nivel">
+					<select id="agregar__nivel" required>
 						<option value="">Nivel de encantamiento</option>
 						<option value="bajo">Bajo</option>
 						<option value="medio">Medio</option>
@@ -167,15 +158,15 @@
 						x
 					</button>
 					<label>Nombre: </label>
-					<input type="text" id="editar__nombre" />
+					<input type="text" id="editar__nombre" required/>
 					<label> Imagen (Url): </label>
-					<input type="text" id="editar__imagen" />
+					<input type="text" id="editar__imagen" required/>
 
 					<label>Description: </label>
-					<textarea id="editar__descripcion"></textarea>
+					<textarea id="editar__descripcion" required></textarea>
 
 					<label>Categoria</label>
-					<select name="categoria" id="editar__categoria">
+					<select name="categoria" id="editar__categoria" required>
 						<option value="Pueblo">Pueblo</option>
 						<option value="Iglesia">Iglesia</option>
 						<option value="Casa">Casa</option>
@@ -183,7 +174,7 @@
 					</select>
 
 					<label>Comunidad</label>
-					<select id="editar__comunidad">
+					<select id="editar__comunidad" required>
 						<option value="">Seleccione una Comunidad</option>
 						<option value="Andalucía">Andalucía</option>
 						<option value="Aragón">Aragón</option>
@@ -207,7 +198,7 @@
 					</select>
 
 					<label>Nivel:</label>
-					<select id="editar__nivel">
+					<select id="editar__nivel" required>
 						<option value="">Nivel de encantamiento</option>
 						<option value="bajo">Bajo</option>
 						<option value="medio">Medio</option>
@@ -225,14 +216,13 @@
 			</section>
 			<div class="modal" id="modal">
 				<div class="modal__card">
-					<p>¿Estás seguro de que quieres borrar?</p>
+					<p>¿Estás seguro de que quieres eliminarlo?</p>
 					<p class="alerta">
-						<i class="fa-solid fa-circle-exclamation"></i>Esto no se puede
-						deshacer.
+						<i class="fa-solid fa-circle-exclamation"></i>No se podrá revertir esta acción.
 					</p>
 					<div class="modal__btn">
-						<button class="cancel" id="cancelar__borrar">Cancelar</button>
-						<button class="delete" id="confrimar__borrar">Borrar</button>
+						<button class="cancelar" id="cancelar__borrar">Cancelar</button>
+						<button class="borrar" id="confrimar__borrar">Eliminar</button>
 					</div>
 				</div>
 			</div>

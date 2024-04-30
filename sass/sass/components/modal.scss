@@ -1,4 +1,3 @@
-// Modal Estilos
 .modal {
 	display: none;
 	position: fixed;
@@ -9,33 +8,37 @@
 	height: 100%;
 	overflow: auto;
 	background-color: rgba(205, 92, 8, 0.8);
-
-	.modal__card {
-		background-color: white;
-		margin: 50% auto; //15% escritorio
-		padding: 20px;
-		border: 1px solid #888;
-		width: 80%;
-		max-width: 400px;
-		text-align: center;
-
-		.alerta {
-			color: red;
-		}
-
-		.modal__btn {
-			margin-top: 20px;
-
-			button {
-				border: none;
-				padding: 8px 16px;
-				cursor: pointer;
-				transition: background-color 0.3s;
-			}
-		}
-	}
 }
-.delete {
+
+.modal__card {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+	max-width: 400px;
+	text-align: center;
+}
+
+.modal__card .alerta {
+	color: red;
+}
+
+.modal__card .modal__btn {
+	margin-top: 20px;
+}
+
+.modal__card .modal__btn button {
+	border: none;
+	padding: 8px 16px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.borrar {
 	background-color: rgb(205, 92, 8);
 	color: white;
 
@@ -43,7 +46,7 @@
 		background-color: darkred;
 	}
 }
-.cancel {
+.cancelar {
 	border: none;
 	text-decoration: none;
 	background-color: rgb(193, 216, 195);
