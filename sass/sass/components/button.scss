@@ -1,5 +1,4 @@
 // Botones Formularios Buscar / Agregar / Editar / cancelar
-
 form {
 	//botones "buscar"
 	input[type="submit"] {
@@ -17,7 +16,7 @@ form {
 		}
 	}
 }
-//Botones header "crear"
+//Boton header "crear"
 header {
 	button {
 		padding: 10px;
@@ -29,7 +28,7 @@ header {
 		transition-property: background-color;
 		transition-duration: 2s;
 		margin-top: 10px;
-		margin-right: 10px;
+		margin-right: 15px;
 
 		&:hover {
 			background-color: rgb(193, 216, 195);
@@ -38,14 +37,15 @@ header {
 }
 .card_detalle{
 button {
-		background-color: rgb(193, 216, 195);
-		width: 75px;
-		border: none;
-		padding: 10px;
-		border-radius: 5px;
-		cursor: pointer;
-		margin-top: 20px;
-	}
+    background-color: rgb(193, 216, 195);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    width:80px;
+}
+
 	.volver__btn {
 		border: none;
 		background-color: transparent;
@@ -61,4 +61,14 @@ button {
 		}
 		
 	}
+}
+
+.cerrar_editar{
+    background-color: rgb(193, 216, 195);
+		border: none;
+		padding: 5px 15px;
+		border-radius: 5px;
+		cursor: pointer;
+		margin-top: 20px;
+
 }

@@ -1,12 +1,17 @@
 //Section Cards
-.contenedor-cards{
-    display: flex;
-   flex-direction: column ;
-   //justify-content: center;
-   align-items: center;
-   gap: 25px;
+.contenedor-cards {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 25px;
+
+	@include responsive() {
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 35px;
+	}
 }
-//en destop cambio colum por flex ,
 
 // Estilos cards
 
@@ -14,14 +19,14 @@
 	background-color: #ffffff;
 	border: 1px solid #eaeaea;
 	border-radius: 5px;
-	box-shadow: 0 0 5px rgb(193, 216, 195);
-	//margin-bottom: 20px;
+	box-shadow: 0 0 5px rgb(198, 223, 200);
 	overflow: hidden;
 	width: 300px;
+	height: 320px;
 
 	.img__card {
 		overflow: hidden;
-		height: 200px;
+		height: 50%;
 	}
 
 	img {
@@ -35,10 +40,9 @@
 	}
 
 	h2 {
-		font-size: 18px;
+		font-size: 1.125rem;
 		margin-bottom: 10px;
 	}
-    
 
 	button {
 		background-color: rgb(106, 156, 137);
@@ -76,7 +80,7 @@
 	}
 
 	h2 {
-		font-size: 20px;
+		font-size: 1.25rem;
 		margin-bottom: 10px;
 	}
 
@@ -85,9 +89,13 @@
 	span {
 		margin-bottom: 10px;
 	}
-.nivel_span{
-    font-weight: bolder;
+	.nivel_span {
+		font-weight: bolder;
+	}
+	.botones_div {
+		display: flex;
+		justify-content: center;
+		align-items: baseline;
+		gap: 10px;
+	}
 }
-	
-}
-

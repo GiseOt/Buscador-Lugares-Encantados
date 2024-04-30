@@ -43,7 +43,7 @@ header button {
   transition-property: background-color;
   transition-duration: 2s;
   margin-top: 10px;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 header button:hover {
   background-color: rgb(193, 216, 195);
@@ -51,12 +51,12 @@ header button:hover {
 
 .card_detalle button {
   background-color: rgb(193, 216, 195);
-  width: 75px;
   border: none;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
+  width: 80px;
 }
 .card_detalle .volver__btn {
   border: none;
@@ -73,24 +73,42 @@ header button:hover {
   text-decoration: underline;
 }
 
+.cerrar_editar {
+  background-color: rgb(193, 216, 195);
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
 .contenedor-cards {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 25px;
 }
+@media (min-width: 970px) {
+  .contenedor-cards {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
+  }
+}
 
 .card {
   background-color: #ffffff;
   border: 1px solid #eaeaea;
   border-radius: 5px;
-  box-shadow: 0 0 5px rgb(193, 216, 195);
+  box-shadow: 0 0 5px rgb(198, 223, 200);
   overflow: hidden;
   width: 300px;
+  height: 320px;
 }
 .card .img__card {
   overflow: hidden;
-  height: 200px;
+  height: 50%;
 }
 .card img {
   width: 100%;
@@ -101,7 +119,7 @@ header button:hover {
   padding: 20px;
 }
 .card h2 {
-  font-size: 18px;
+  font-size: 1.125rem;
   margin-bottom: 10px;
 }
 .card button {
@@ -136,7 +154,7 @@ header button:hover {
   margin-bottom: 20px;
 }
 .card_detalle h2 {
-  font-size: 20px;
+  font-size: 1.25rem;
   margin-bottom: 10px;
 }
 .card_detalle h3,
@@ -146,6 +164,12 @@ header button:hover {
 }
 .card_detalle .nivel_span {
   font-weight: bolder;
+}
+.card_detalle .botones_div {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 10px;
 }
 
 form {
@@ -183,6 +207,16 @@ form {
   border: 1px solid #ccc;
   border-radius: 0.5rem;
 }
+@media (min-width: 970px) {
+  .seccion__formulario {
+    max-width: 600px;
+    margin: auto;
+  }
+}
+
+.formulario__busqueda {
+  margin-bottom: 50px;
+}
 
 select {
   text-align: center;
@@ -208,12 +242,17 @@ h1 {
   padding-block: 20px;
   padding-inline: 10px;
   color: white;
-  font-size: 25px;
-  text-align: center;
+  font-size: 1.563rem;
   flex-grow: 1;
   text-shadow: 3px 3px 2px rgb(3, 3, 3);
   text-align: justify;
   font-family: "Vollkorn SC", sans-serif;
+}
+@media (min-width: 970px) {
+  h1 {
+    text-align: center;
+    font-size: 2.3rem;
+  }
 }
 
 .modal {
@@ -227,43 +266,50 @@ h1 {
   overflow: auto;
   background-color: rgba(205, 92, 8, 0.8);
 }
-.modal .modal__card {
+
+.modal__card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: white;
-  margin: 50% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
   max-width: 400px;
   text-align: center;
 }
-.modal .modal__card .alerta {
+
+.modal__card .alerta {
   color: red;
 }
-.modal .modal__card .modal__btn {
+
+.modal__card .modal__btn {
   margin-top: 20px;
 }
-.modal .modal__card .modal__btn button {
+
+.modal__card .modal__btn button {
   border: none;
   padding: 8px 16px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
-.delete {
+.borrar {
   background-color: rgb(205, 92, 8);
   color: white;
 }
-.delete:hover {
+.borrar:hover {
   background-color: darkred;
 }
 
-.cancel {
+.cancelar {
   border: none;
   text-decoration: none;
   background-color: rgb(193, 216, 195);
   margin-right: 10px;
 }
-.cancel:hover {
+.cancelar:hover {
   text-decoration: underline;
 }
 
@@ -273,9 +319,13 @@ h1 {
   top: 50%;
   left: 35%;
   transform: translate(-50%, -50%);
-  text-align: center;
   max-width: 100%;
   overflow-x: hidden;
+}
+@media (min-width: 970px) {
+  .spinner {
+    left: 50%;
+  }
 }
 .spinner img {
   display: block;

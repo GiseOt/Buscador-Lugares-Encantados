@@ -20,10 +20,10 @@ btnMostrarFormCrear.addEventListener("click", (e) => {
 	document.getElementById("section_buscar").style.display = "none";
 });
 
-// Boton que cancela mi edicion
+// Boton de cancelar
 btnCancelar.addEventListener("click", (e) => {
 	formularioAgregar.style.display = "none";
-	document.getElementById("contenedor-cards").style.display = "block";
+	document.getElementById("contenedor-cards").style.display = "flex";
 	document.getElementById("section_buscar").style.display = "block";
 });
 
@@ -70,7 +70,7 @@ const agregarLugar = (nuevoLugar) => {
 			getLugares(urlApi);
 			agregarLugarform.reset(); // resetea el formulario
 			formularioAgregar.style.display = "none";
-			document.getElementById("contenedor-cards").style.display = "block";
+			document.getElementById("contenedor-cards").style.display = "flex";
 			document.getElementById("section_buscar").style.display = "block";
 		})
 		.catch((err) => console.log(err));

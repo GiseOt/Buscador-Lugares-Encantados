@@ -1,48 +1,49 @@
-
+//Formulario general
 form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-block: 20px;
-    gap: 20px;
-   
-    
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-block: 20px;
+	gap: 20px;
 }
 
-// Estilos para el contenedor del formulario
+//Formularios Editar / Agregar
 .seccion__formulario {
-    display: none;
-    form {
-  width: 100%;
-  background-color: rgb(223, 230, 230);
-  padding: 20px ;
-  border-radius: 10px;
-    }
+	display: none;
+	form {
+		width: 100%;
+		background-color: rgb(223, 230, 230);
+		padding: 20px;
+		border-radius: 10px;
+	}
 
-    // Estilos para los elementos del formulario
- .formulario_diseño {
-  display: flex;
-  flex-direction: column;
-} 
+	.formulario_diseño {
+		display: flex;
+		flex-direction: column;
+	}
 
-// Estilos para las etiquetas de los campos
-.formulario_diseño label {
-  font-weight: bold;
-  margin-bottom: 0.5rem; // Espaciado inferior entre etiquetas
+	.formulario_diseño label {
+		font-weight: bold;
+		margin-bottom: 0.5rem;
+	}
+
+	.formulario_diseño input[type="text"],
+	.formulario_diseño textarea,
+	.formulario_diseño select {
+		width: 100%;
+		padding: 0.5rem;
+		margin-bottom: 1rem;
+		border: 1px solid #ccc;
+		border-radius: 0.5rem;
+	}
+	@include responsive() {
+		max-width: 600px;
+		margin: auto;
+	}
 }
 
-// Estilos para los campos de entrada de texto
-.formulario_diseño input[type="text"],
-.formulario_diseño textarea,
-.formulario_diseño select {
-  width: 100%; // Ancho completo del campo
-  padding: 0.5rem; // Espaciado interno del campo
-  margin-bottom: 1rem; // Espaciado inferior entre campos
-  border: 1px solid #ccc; // Borde del campo
-  border-radius: 0.5rem; // Borde redondeado del campo
+//Formulario búsqueda
+.formulario__busqueda {
+	margin-bottom: 50px;
 }
-
-}
-
-
