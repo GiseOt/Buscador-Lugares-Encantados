@@ -1,7 +1,8 @@
 // Botones Formularios Buscar / Agregar / Editar / cancelar
 form {
 	//botones "buscar"
-	input[type="submit"] {
+	input[type="submit"],
+    input[type="button"] {
 		padding: 8px 15px;
 		background-color: rgb(205, 92, 8);
 		color: white;

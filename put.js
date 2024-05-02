@@ -1,4 +1,4 @@
-//PUT ************
+//PUT ****
 const editarLugarForm = document.getElementById("seccion__formulario__editar");
 const editarNombreInput = document.getElementById("editar__nombre");
 const editarImagenInput = document.getElementById("editar__imagen");
@@ -11,7 +11,7 @@ const editarNivelSelect = document.getElementById("editar__nivel");
 const btnEditar = document.getElementById("editar__lugar");
 const formularioEditar = document.getElementById("formulario_editar");
 
-//Mostrar Formulario Edicion
+
 const mostrarFormularioEdicion = (lugar) => {
 	console.log("Lugar original:", lugar);
 	editarLugarForm.style.display = "block";
@@ -21,8 +21,6 @@ const mostrarFormularioEdicion = (lugar) => {
 	editarCategoriaSelect.value = lugar.category;
 	editarComunidadSelect.value = lugar.location;
 	editarNivelSelect.value = lugar.enchantmentLevel;
-
-	//btnEditar.setAttribute("data-lugarid", lugar.id);
 	btnEditar.lugarId = lugar.id;
 };
 
@@ -50,7 +48,11 @@ const confrimarEditar = () => {
 		.then((res) => {
 			getLugarEncantado(idLugar);
 		})
-		.catch((err) => console.log(err));
+		.catch((err) => {
+			contenedorCards.innerHTML = `<div class="alert">
+                <h2> No se editaron Lugares </h2>
+                </div>`;
+		});
 };
 
 formularioEditar.addEventListener("submit", (e) => {
@@ -63,7 +65,6 @@ btnEditar.addEventListener("click", () => {
 	editarLugarForm.style.display = "none";
 });
 
-// Cerrar form editar
 const ocultarFormularioEdicion = () => {
 	const btnCerrarEditar = document.getElementById("cerrar_editar");
 
