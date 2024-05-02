@@ -1,4 +1,4 @@
-//GET ************
+//GET ****
 const urlApi = "https://6617d152ed6b8fa43483db5a.mockapi.io/api/places";
 const contenedorCards = document.getElementById("contenedor-cards");
 const sectionBuscar = document.getElementById("section_buscar");
@@ -6,7 +6,7 @@ const spinner = document.getElementById("spinner");
 
 // Mi spinner
 const mostrarSpinner = () => {
-	spinner.style.display = "block";
+	spinner.style.display = "flex";
 	sectionBuscar.style.display = "none";
 	contenedorCards.style.display = "none";
 };
@@ -31,7 +31,7 @@ const getLugares = (urlApi) => {
 			renderizarCardLugar(data);
 		})
 		.catch((err) => {
-			contenedorCards.innerHTML = `<div class="card-alert">
+			contenedorCards.innerHTML = `<div class="alerta">
                 <h2> No se encontraron Lugares </h2>
                 </div>`;
 		});
@@ -63,8 +63,12 @@ const btnsDetalles = (btns) => {
 	btns.forEach((btn) =>
 		btn.addEventListener("click", () => {
 			const cardId = btn.getAttribute("data-cardid");
+			mostrarSpinner();
+			setTimeout(() => {
+				ocultarSpinner();
+				sectionBuscar.style.display = "none";
+			}, 2000);
 			getLugarEncantado(cardId);
-			sectionBuscar.style.display = "none";
 		})
 	);
 };
@@ -73,7 +77,11 @@ const getLugarEncantado = (idLugar) => {
 	fetch(`${urlApi}/${idLugar}`)
 		.then((res) => res.json())
 		.then((data) => renderizarDetalleLugar(data))
-		.catch((err) => console.log(err));
+		.catch((err) => {
+			contenedorCards.innerHTML = `<div class="alerta">
+                <h2> No se encontraron Lugares </h2>
+                </div>`;
+		});
 };
 
 // Renderizar el detalle del lugar
@@ -104,7 +112,7 @@ const renderizarDetalleLugar = (lugar) => {
 
 	const btnVolver = document.getElementById("volver__btn");
 	btnVolver.addEventListener("click", () => {
-        editarLugarForm.style.display = "none";
+		editarLugarForm.style.display = "none";
 		sectionBuscar.style.display = "block";
 		document.getElementById("contenedor-detalle").style.display = "none";
 		getLugares(urlApi);

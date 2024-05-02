@@ -12,8 +12,7 @@
 			<button id="btn__form-crear" class="btn__form-crear">
 				<i class="fa-solid fa-house"></i>Agregar
 			</button>
-		</header>
-
+		</header>  
 		<main class="main">
 		<div class="spinner" id ="spinner">
       <img src="./assets/Boo-unscreen.gif" alt="Loading" />
@@ -22,11 +21,11 @@
 				<h3>
 					Explora los rincones más encantados de España en un único sitio.
 				</h3>
-				<!--**-- FORMULARIO BUSQUEDA --*****-->
+				<!--FORMULARIO BUSQUEDA-->
 				<form id="formulario__busqueda" class="formulario__busqueda">
 					<div id="buscar_comunidad" class="comunidades__select">
 						<select id="comunidad" class="select_comunidad">
-							<option value="">Seleccione una Comunidad</option>
+							<option value="Comunidad">Seleccione una Comunidad</option>
 							<option value="Andalucía">Andalucía</option>
 							<option value="Aragón">Aragón</option>
 							<option value="Asturias">Asturias</option>
@@ -50,7 +49,7 @@
 					</div>
 					<div id="buscar__categorias">
 						<select id="categorias__select">
-							<option>Categoria</option>
+							<option value="Categoria">Categoria</option>
 							<option value="Pueblo">Pueblo</option>
 							<option value="Iglesia">Iglesia</option>
 							<option value="Casa">Casa</option>
@@ -59,19 +58,13 @@
 					</div>
 					<div id="buscar__nivel--encantamiento" class="buscar__nivel">
 						<select id="nivel_encantamiento">
-							<option value="">Nivel de encantamiento</option>
+							<option value="Nivel">Nivel de encantamiento</option>
 							<option value="Bajo">Bajo</option>
 							<option value="Medio">Medio</option>
 							<option value="Alto">Alto</option>
 						</select>
 					</div>
 					<div>
-						<!-- <input
-							type="submit"
-							id="btn__buscar"
-							class="buscar"
-							value="Buscar"
-						/> -->
 						<input
 							type="submit"
 							id="btn__limpiar"
@@ -81,7 +74,7 @@
 					</div>
 				</form>
 			</section>
-			<!--**-- DIV-CONETENEDOR CARDS --*****-->
+			<!--DIV CONETENEDOR CARDS-->
 			<section id="contenedor-cards" class="contenedor-cards">
 				
 			</section>
@@ -89,23 +82,22 @@
 			<section id="seccion__formulario__agregar" class="seccion__formulario">
 				<form class="formulario_diseño" id="formulario_agregar">
 					<label for="agregar__lugar">Nombre: </label>
-					<input type="text" id="agregar__lugar" required />
+					<input type="text" id="agregar__lugar" name="nombre" required />
 					<label for="agregar__imagen"> Imagen (Url): </label>
-					<input type="text" id="agregar__imagen" required/>
+					<input type="text" id="agregar__imagen" name="imagen" required/>
 
-					<label for="agregar__descripcion">Description: </label>
-					<textarea id="agregar__descripcion" required></textarea>
+					<label for="agregar__descripcion">Descripcion: </label>
+					<textarea id="agregar__descripcion" name="descripcion" required></textarea>
 
 					<label for="agregar__categoria">Categoria</label>
-					<select name="categoria" id="agregar__categoria" required>
+					<select name="categoria" id="agregar__categoria">
 						<option value="Pueblo">Pueblo</option>
 						<option value="Iglesia">Iglesia</option>
 						<option value="Casa">Casa</option>
 						<option value="Hospital">Hospital</option>
 					</select>
-
 					<label for="agregar__comunidad">Comunidad</label>
-					<select id="agregar__comunidad" required>
+					<select id="agregar__comunidad" name="comunidad" required>
 						<option value="">Seleccione una Comunidad</option>
 						<option value="Andalucía">Andalucía</option>
 						<option value="Aragón">Aragón</option>
@@ -129,7 +121,7 @@
 					</select>
 
 					<label for="agregar__nivel">Nivel:</label>
-					<select id="agregar__nivel" required>
+					<select id="agregar__nivel" name="nivel" required>
 						<option value="">Nivel de encantamiento</option>
 						<option value="bajo">Bajo</option>
 						<option value="medio">Medio</option>
@@ -137,7 +129,7 @@
 					</select>
 					<div>
 						<input
-							type="submit"
+							type="button"
 							class="btn__cancelar"
 							id="btn__cancelar"
 							value="Cancelar"
@@ -162,11 +154,11 @@
 					<label> Imagen (Url): </label>
 					<input type="text" id="editar__imagen" required/>
 
-					<label>Description: </label>
+					<label>Descripcion: </label>
 					<textarea id="editar__descripcion" required></textarea>
 
 					<label>Categoria</label>
-					<select name="categoria" id="editar__categoria" required>
+					<select name="categoria" id="editar__categoria">
 						<option value="Pueblo">Pueblo</option>
 						<option value="Iglesia">Iglesia</option>
 						<option value="Casa">Casa</option>
@@ -174,7 +166,7 @@
 					</select>
 
 					<label>Comunidad</label>
-					<select id="editar__comunidad" required>
+					<select id="editar__comunidad">
 						<option value="">Seleccione una Comunidad</option>
 						<option value="Andalucía">Andalucía</option>
 						<option value="Aragón">Aragón</option>
@@ -198,7 +190,7 @@
 					</select>
 
 					<label>Nivel:</label>
-					<select id="editar__nivel" required>
+					<select id="editar__nivel">
 						<option value="">Nivel de encantamiento</option>
 						<option value="bajo">Bajo</option>
 						<option value="medio">Medio</option>

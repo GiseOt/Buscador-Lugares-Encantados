@@ -1,4 +1,4 @@
-//POST
+//POST****
 const formularioAgregar = document.getElementById(
 	"seccion__formulario__agregar"
 );
@@ -13,18 +13,19 @@ const btnCancelar = document.getElementById("btn__cancelar");
 const btnAgregar = document.getElementById("crear__lugar");
 const btnMostrarFormCrear = document.getElementById("btn__form-crear");
 
-// Boton que muestra mi formulario
+
 btnMostrarFormCrear.addEventListener("click", (e) => {
 	formularioAgregar.style.display = "block";
 	document.getElementById("contenedor-cards").style.display = "none";
 	document.getElementById("section_buscar").style.display = "none";
 });
 
-// Boton de cancelar
+// Botón cancelar
 btnCancelar.addEventListener("click", (e) => {
 	formularioAgregar.style.display = "none";
 	document.getElementById("contenedor-cards").style.display = "flex";
 	document.getElementById("section_buscar").style.display = "block";
+	agregarLugarform.reset();
 });
 
 btnAgregar.addEventListener("click", () => {
@@ -48,30 +49,44 @@ btnAgregar.addEventListener("click", () => {
 });
 
 agregarLugarform.addEventListener("submit", (e) => {
-	e.preventDefault(); // Evitar que mi formulario se envie
+	e.preventDefault();
 });
 
 // Post
 const agregarLugar = (nuevoLugar) => {
-	fetch(urlApi, {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify(nuevoLugar),
-	})
-		.then((res) => {
-			if (res.ok) {
-				return res.json();
-			}
+	if (
+		agregarNombre.value.trim() === "" ||
+		agregarImagen.value.trim() === "" ||
+		agregarDescripcion.value.trim() === "" ||
+		agregarCategoriaSelect.value.trim() === "" ||
+		agregarComunidadSelect.value.trim() === "" ||
+		agregarNivelSelect.value.trim() === ""
+	) {
+		return;
+	} else {
+		fetch(urlApi, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(nuevoLugar),
 		})
-		.then((data) => {
-			console.log("Nuevo lugar agregado:", data);
-			getLugares(urlApi);
-			agregarLugarform.reset(); // resetea el formulario
-			formularioAgregar.style.display = "none";
-			document.getElementById("contenedor-cards").style.display = "flex";
-			document.getElementById("section_buscar").style.display = "block";
-		})
-		.catch((err) => console.log(err));
+			.then((res) => {
+				if (res.ok) {
+					return res.json();
+				}
+			})
+			.then((data) => {
+				formularioAgregar.style.display = "none";
+				document.getElementById("contenedor-cards").style.display = "flex";
+				document.getElementById("section_buscar").style.display = "block";
+				getLugares(urlApi);
+				agregarLugarform.reset();
+			})
+			.catch((err) => {
+				contenedorCards.innerHTML = `<div class="alerta">
+                <h2> No se agregaron Lugares </h2>
+                </div>`;
+			});
+	}
 };
