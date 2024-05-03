@@ -1,11 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lugares Encantados</title>
-</head>
-<body>
-    
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lugares Encantados</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Lugares Encantados</h1>
+			<button id="btn__form-crear" class="btn__form-crear">
+				<i class="fa-solid fa-house"></i>Agregar
+			</button>
+		</header>  
+		<main class="main">
+		<div class="spinner" id ="spinner">
+      <img src="./assets/Boo-unscreen.gif" alt="Loading" />
+    </div> 
+			<section id="section_buscar" class="section_buscar">
+				<h3>
+					Explora los rincones más encantados de España en un único sitio.
+				</h3>
+				<!--FORMULARIO BUSQUEDA-->
+				<form id="formulario__busqueda" class="formulario__busqueda">
+					<div id="buscar_comunidad" class="comunidades__select">
+						<select id="comunidad" class="select_comunidad">
+							<option value="Comunidad">Seleccione una Comunidad</option>
+							<option value="Andalucía">Andalucía</option>
+							<option value="Aragón">Aragón</option>
+							<option value="Asturias">Asturias</option>
+							<option value="Islas Baleares">Islas Baleares</option>
+							<option value="Canarias">Canarias</option>
+							<option value="Cantabria">Cantabria</option>
+							<option value="Castilla y León">Castilla y León</option>
+							<option value="Castilla-La Mancha">Castilla-La Mancha</option>
+							<option value="Catalunya">Catalunya</option>
+							<option value="Extremadura">Extremadura</option>
+							<option value="Galicia">Galicia</option>
+							<option value="Madrid">Madrid</option>
+							<option value="Región de Murcia">Región de Murcia</option>
+							<option value="Comunidad Foral de Navarra">
+								Comunidad Foral de Navarra
+							</option>
+							<option value="País Vasco">País Vasco</option>
+							<option value="La Rioja">La Rioja</option>
+							<option value="Comunidad Valenciana">Comunidad Valenciana</option>
+						</select>
+					</div>
+					<div id="buscar__categorias">
+						<select id="categorias__select">
+							<option value="Categoria">Categoria</option>
+							<option value="Pueblo">Pueblo</option>
+							<option value="Iglesia">Iglesia</option>
+							<option value="Casa">Casa</option>
+							<option value="Hospital">Hospital</option>
+						</select>
+					</div>
+					<div id="buscar__nivel--encantamiento" class="buscar__nivel">
+						<select id="nivel_encantamiento">
+							<option value="Nivel">Nivel de encantamiento</option>
+							<option value="Bajo">Bajo</option>
+							<option value="Medio">Medio</option>
+							<option value="Alto">Alto</option>
+						</select>
+					</div>
+					<div>
+						<input
+							type="submit"
+							id="btn__limpiar"
+							class="limpiar"
+							value="Limpiar"
+						/>
+					</div>
+				</form>
+			</section>
+			<!--DIV CONETENEDOR CARDS-->
+			<section id="contenedor-cards" class="contenedor-cards">
+				
+			</section>
+			<!--FORMULARIO AGREGAR-->
+			<section id="seccion__formulario__agregar" class="seccion__formulario">
+				<form class="formulario_diseño" id="formulario_agregar">
+					<label for="agregar__lugar">Nombre: </label>
+					<input type="text" id="agregar__lugar" name="nombre" required />
+					<label for="agregar__imagen"> Imagen (Url): </label>
+					<input type="text" id="agregar__imagen" name="imagen" required/>
+
+					<label for="agregar__descripcion">Descripcion: </label>
+					<textarea id="agregar__descripcion" name="descripcion" required></textarea>
+
+					<label for="agregar__categoria">Categoria</label>
+					<select name="categoria" id="agregar__categoria">
+						<option value="Pueblo">Pueblo</option>
+						<option value="Iglesia">Iglesia</option>
+						<option value="Casa">Casa</option>
+						<option value="Hospital">Hospital</option>
+					</select>
+					<label for="agregar__comunidad">Comunidad</label>
+					<select id="agregar__comunidad" name="comunidad" required>
+						<option value="">Seleccione una Comunidad</option>
+						<option value="Andalucía">Andalucía</option>
+						<option value="Aragón">Aragón</option>
+						<option value="Asturias">Asturias</option>
+						<option value="Islas Baleares">Islas Baleares</option>
+						<option value="Canarias">Canarias</option>
+						<option value="Cantabria">Cantabria</option>
+						<option value="Castilla y León">Castilla y León</option>
+						<option value="Castilla-La Mancha">Castilla-La Mancha</option>
+						<option value="Catalunya">Catalunya</option>
+						<option value="Extremadura">Extremadura</option>
+						<option value="Galicia">Galicia</option>
+						<option value="Madrid">Madrid</option>
+						<option value="Región de Murcia">Región de Murcia</option>
+						<option value="Comunidad Foral de Navarra">
+							Comunidad Foral de Navarra
+						</option>
+						<option value="País Vasco">País Vasco</option>
+						<option value="La Rioja">La Rioja</option>
+						<option value="Comunidad Valenciana">Comunidad Valenciana</option>
+					</select>
+
+					<label for="agregar__nivel">Nivel:</label>
+					<select id="agregar__nivel" name="nivel" required>
+						<option value="">Nivel de encantamiento</option>
+						<option value="bajo">Bajo</option>
+						<option value="medio">Medio</option>
+						<option value="alto">Alto</option>
+					</select>
+					<div>
+						<input
+							type="button"
+							class="btn__cancelar"
+							id="btn__cancelar"
+							value="Cancelar"
+						/>
+						<input
+							type="submit"
+							class="btn-crear"
+							id="crear__lugar"
+							value="Agregar"
+						/>
+					</div>
+				</form>
+			</section>
+			<!--FORMULARIO EDITAR-->
+			<section id="seccion__formulario__editar" class="seccion__formulario">
+				<form class="formulario_diseño" id="formulario_editar">
+					<button class="cerrar_editar" type="button" id="cerrar_editar">
+						x
+					</button>
+					<label>Nombre: </label>
+					<input type="text" id="editar__nombre" required/>
+					<label> Imagen (Url): </label>
+					<input type="text" id="editar__imagen" required/>
+
+					<label>Descripcion: </label>
+					<textarea id="editar__descripcion" required></textarea>
+
+					<label>Categoria</label>
+					<select name="categoria" id="editar__categoria">
+						<option value="Pueblo">Pueblo</option>
+						<option value="Iglesia">Iglesia</option>
+						<option value="Casa">Casa</option>
+						<option value="Hospital">Hospital</option>
+					</select>
+
+					<label>Comunidad</label>
+					<select id="editar__comunidad">
+						<option value="">Seleccione una Comunidad</option>
+						<option value="Andalucía">Andalucía</option>
+						<option value="Aragón">Aragón</option>
+						<option value="Asturias">Asturias</option>
+						<option value="Islas Baleares">Islas Baleares</option>
+						<option value="Canarias">Canarias</option>
+						<option value="Cantabria">Cantabria</option>
+						<option value="Castilla y León">Castilla y León</option>
+						<option value="Castilla-La Mancha">Castilla-La Mancha</option>
+						<option value="Catalunya">Catalunya</option>
+						<option value="Extremadura">Extremadura</option>
+						<option value="Galicia">Galicia</option>
+						<option value="Madrid">Madrid</option>
+						<option value="Región de Murcia">Región de Murcia</option>
+						<option value="Comunidad Foral de Navarra">
+							Comunidad Foral de Navarra
+						</option>
+						<option value="País Vasco">País Vasco</option>
+						<option value="La Rioja">La Rioja</option>
+						<option value="Comunidad Valenciana">Comunidad Valenciana</option>
+					</select>
+
+					<label>Nivel:</label>
+					<select id="editar__nivel">
+						<option value="">Nivel de encantamiento</option>
+						<option value="bajo">Bajo</option>
+						<option value="medio">Medio</option>
+						<option value="alto">Alto</option>
+					</select>
+					<div>
+						<input
+							type="submit"
+							class="btn-editar"
+							id="editar__lugar"
+							value="Editar"
+						/>
+					</div>
+				</form>
+			</section>
+			<div class="modal" id="modal">
+				<div class="modal__card">
+					<p>¿Estás seguro de que quieres eliminarlo?</p>
+					<p class="alerta">
+						<i class="fa-solid fa-circle-exclamation"></i>No se podrá revertir esta acción.
+					</p>
+					<div class="modal__btn">
+						<button class="cancelar" id="cancelar__borrar">Cancelar</button>
+						<button class="borrar" id="confrimar__borrar">Eliminar</button>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer id="footer" class="footer">
+			<p>© Gisella Ortiz de la Tabla 2024</p>
+		</footer>
+		<!--script Fontawesome -->
+		<script
+			src="https://kit.fontawesome.com/04baa38fa8.js"
+			crossorigin="anonymous"
+		></script>
+        <!--script funciones -->
+		<script src="js/get.js"></script>
+		<script src="js/put.js"></script>
+		<script src="js/post.js"></script>
+		<script src="js/delete.js"></script>
+		<script src="js/filtros.js"></script>
+	</body>
 </html>
+
