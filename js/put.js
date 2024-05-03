@@ -13,7 +13,6 @@ const formularioEditar = document.getElementById("formulario_editar");
 
 
 const mostrarFormularioEdicion = (lugar) => {
-	console.log("Lugar original:", lugar);
 	editarLugarForm.style.display = "block";
 	editarNombreInput.value = lugar.name;
 	editarImagenInput.value = lugar.urlImagen;
@@ -35,7 +34,6 @@ const confrimarEditar = () => {
 		location: editarComunidadSelect.value,
 		enchantmentLevel: editarNivelSelect.value,
 	};
-	console.log("Lo que envio:", lugarEditado);
 
 	// metodo PUT
 	fetch(`${urlApi}/${idLugar}`, {
